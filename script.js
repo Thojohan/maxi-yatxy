@@ -2,7 +2,7 @@
 
 const mainButtons = document.querySelectorAll('.main-buttons');
 const dice = document.querySelectorAll('.dice');
-diceWrapper = document.querySelector('.dice-wrapper');
+const diceWrapper = document.querySelector('.dice-wrapper');
 const rulesModal = document.querySelector('.rules-modal');
 const newGameModal = document.querySelector('.new-game-modal');
 const victoryModal = document.querySelector('.victory-screen');
