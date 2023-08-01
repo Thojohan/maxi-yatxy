@@ -508,6 +508,10 @@ function newGame() {
   [...document.querySelectorAll('.player')].forEach(player => player.remove());
   createPlayers(nameArray, document.querySelector('.toggle-chips').checked);
   leftWrapper.style.pointerEvents = 'auto';
+  diceWrapper.style.animation = 'hide-dice 0.5s forwards';
+  instanceArray.forEach(entry => {
+    document.getElementById(`${entry.fieldName}`).style.backgroundColor = '';
+  });
   victoryWrapper.innerHTML = '';
   game.gameOngoing = true;
   rollDiceButton.disabled = false;
@@ -536,8 +540,6 @@ function generateNameFields(e) {
     );
   }
 }
-
-function callerYatzy(e) {}
 
 mainButtons.forEach(button =>
   button.addEventListener('click', e => {
