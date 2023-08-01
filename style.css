@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Shrikhand&display=swap');
+
+:root {
+  --bg-color: rgb(255, 255, 255);
+  --x: 0.5
+  --y: 0.5
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+}
+
+* {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+h2 {
+  font-size: 2.5vh;
+}
+
+span {
+  display: flex;
+  width: 90%;
+  line-height: 100%;
+  margin-left: 1px;
+  margin-right: 5px;
+  overflow-wrap: break-word;
+ align-items: center;
+ justify-content: center;
+}
+
+.background-wrapper {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url(monochrome-dice.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30vw;
+  height: 25vh;
+  top: 2vh;
+  right: 0;
+  bottom: auto;
+  position: absolute;
+  z-index: 2;
+}
+
+.page-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+}
+
+.title-text {
+  font-family: 'Shrikhand', cursive;
+  margin-right: 60px;
+  font-size: 8vw;
+  font-weight: 400;
+  text-align: center;
+  user-select: none;
+}
+
+.left-wrapper {
+  display: flex;
+  /* height: 630px; */
+  min-height: 700px;
+  height: 87vh;
+  margin-top: 50px;
+  width: fit-content;
+  margin-left: 40px;
+  margin-right: auto;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 3px rgb(35, 28, 86);
+  z-index: 3;
+  pointer-events: none;
+  
+}
+
+.yatzy-buttons {
+  background-image: url(mainbar.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 0.3vh;
+  height: 1flex;
+  min-width: 97px;
+  aspect-ratio: 1/8
+}
+
+.player {
+  background-image: url(player-border.jpg);
+  background-size: cover;
+  min-height: 700px;
+  height: 1flex;
+  aspect-ratio: 1/18;
+  min-width: 42px;
+  margin-left: 1px;
+  padding-bottom: 0.55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-left: solid black 1.5px;
+}
+
+.fields, .player-field {
+  display: flex;
+  justify-content: center;
+  word-break: break-all;
+  text-align: center;
+  font-size: 2.2vh;
+  height: 100%;
+  width: 100%;
+} 
+
+.clickable:hover {
+  background-color: rgb(229, 153, 153, 0.15) !important;
+}
+
+.clickable:active {
+  background-color: rgba(189, 95, 95, 0.25) !important;
+}
+
+.right-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  vertical-align: bottom;
+  right: 0;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  width: fit-content;
+  min-width: 100px;
+  z-index: 3;
+}
+
+.dice-wrapper, .status-wrapper{
+  margin-bottom: 7%;
+  display: flex;
+  align-self: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  /*
+  min-height: 83px;
+  max-width: 440px;
+  min-width: 83px;
+  max-height: 440px;
+  */
+  min-height: 83px;
+  max-height: 50vh;
+  min-width: 83px;
+  width: 32vw;  
+  margin-left: auto;
+  max-width: 50vw;
+  background-color: rgba(242, 242, 242, 0.4);
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px rgb(35, 28, 86);
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes dice-opacity {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes hide-dice {
+  from {
+  visibility: visible;
+  opacity: 1;
+}
+
+to {
+  visibility: hidden;
+  opacity: 0;
+}
+  
+}
+
+.dice {
+  /*width: 60px;
+  height: 60px;*/
+  width: 7.5vh;
+  aspect-ratio: 1/1;
+  padding: 7px;
+  filter: drop-shadow(3px 3px 3px #1c2070);
+  z-index: 4;
+}
+
+.held {
+  filter: invert(20%) sepia(10%) saturate(10%) hue-rotate(10deg)
+    brightness(1000%) contrast(100%) drop-shadow(3px 3px 3px #ffd900);
+}
+
+.status {
+  width: fit-content;
+  height: 100%;
+  font-family: 'Shrikhand', cursive;
+  font-size: 2.3vh;
+  margin-right: 14px;
+  margin-left: 14px;
+}
+
+.button-container  {
+  margin-bottom: 8%;
+  display: flex;
+  align-self: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  min-height: 83px;
+  max-width: 40vw;
+  min-width: 83px;
+  max-height: 25vh;
+  z-index: 4;
+}
+
+.main-buttons {
+  font-family: 'Shrikhand', cursive;
+  font-size: 2.2vh;
+  height: 7.8vh;
+  aspect-ratio: 2/1;  
+  background-color: rgb(154, 146, 146, 0.6);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(35, 28, 86);
+  margin: 15px;
+}
+
+.main-buttons:focus,
+.rules:focus {
+  outline: none;
+}
+
+.roll-dice:disabled {
+  background-color: lightgray;
+  
+}
+
+
+.modal-wrapper {
+  width: fit-content;
+  min-width: 90%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5vh;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 3px rgb(35, 28, 86);
+  padding: 0;
+}
+
+.rules-modal {
+  width: 65vw;
+}
+
+.new-game-modal, .victory-screen {
+  font-size: 1.9vh;
+  font-weight: 600;
+  width: 40vw;
+  line-height: 180%;
+}
+
+.input {
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 3px rgb(35, 28, 86);
+  max-width: 120px;
+  transform: scale(115%);
+}
+
+.player-input-field {
+  margin-bottom: 20px;
+}
+
+.modal-button {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  float: right;
+}
+
+.background-blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 3;
+  visibility: hidden;
+}
+
+
+@keyframes animate-dice {
+  100% {
+    
+    transform: translateX(var(--x)) translateY(var(--y)) rotate(360deg) scale(0%);
+    opacity: 0;
+    z-index: 4;
+  }
+}

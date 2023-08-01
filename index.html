@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Maxi Yatzy</title>
+  </head>
+  <body>
+    <div class="background-wrapper"></div>
+    <div class="title-container">
+      <span class="title-text">Maxi Yatzy</span>
+    </div>
+    <div class="page-wrapper">
+      <div class="left-wrapper">
+        <div class="yatzy-buttons">
+          <div class="fields"></div>
+          <div id="Enere" class="fields Treere clickable"></div>
+          <div id="Toere" class="fields Toere clickable"></div>
+          <div id="Treere" class="fields Treere clickable"></div>
+          <div id="Firere" class="fields Firere clickable"></div>
+          <div id="Femmere" class="fields Femmere clickable"></div>
+          <div id="Seksere" class="fields Seksere clickable"></div>
+          <div id="SumOppe" class="fields SumOppe"></div>
+          <div id="Bonus" class="fields Bonus"></div>
+          <div id="EttPar" class="fields EttPar clickable"></div>
+          <div id="ToPar" class="fields ToPar clickable"></div>
+          <div id="TrePar" class="fields TrePar clickable"></div>
+          <div id="TreLike" class="fields TreLike clickable"></div>
+          <div id="FireLike" class="fields FireLike clickable"></div>
+          <div id="FemLike" class="fields FemLike clickable"></div>
+          <div id="LitenStraight" class="fields LitenStraight clickable"></div>
+          <div id="StorStraight" class="fields StorStraight clickable"></div>
+          <div id="FullStraight" class="fields FullStraight clickable"></div>
+          <div id="Hytte" class="fields Hytte clickable"></div>
+          <div id="Hus" class="fields Hus clickable"></div>
+          <div id="Tårn" class="fields Tårn clickable"></div>
+          <div id="Sjanse" class="fields Sjanse clickable"></div>
+          <div id="MaxiYatzy" class="fields MaxiYatzy clickable"></div>
+          <div class="fields"></div>
+        </div>
+          <!-- 
+        <div class="player">
+          <div class="player-field name-field player-1" style="font-size:11px"><span>TJ</span></div>
+  <div class="player-field Enere-field player-1"></div>
+  <div class="player-field Toere-field player-1"></div>
+  <div class="player-field Treere-field player-1" style="margin-bottom: 2px;"></div>
+  <div class="player-field Firere-field player-1"></div>
+  <div class="player-field Femmere-field player-1"></div>
+  <div class="player-field Seksere-field player-1"></div>
+  <div class="player-field SumOppe-field player-1" style="margin-bottom: 3px;"></div>
+  <div class="player-field Bonus-field player-1"></div>
+  <div class="player-field EttPar-field player-1"></div>
+  <div class="player-field ToPar-field player-1" style="margin-bottom: 1px;"></div>
+  <div class="player-field TrePar-field player-1"></div>
+  <div class="player-field TreLike-field player-1"></div>
+  <div class="player-field FireLike-field player-1"></div>
+  <div class="player-field Fem-field player-1"></div>
+  <div class="player-field LitenStraight-field player-1"></div>
+  <div class="player-field StorStraight-field player-1"></div>
+  <div class="player-field FullStraight-field player-1"></div>
+  <div class="player-field Hytte-field player-1"></div>
+  <div class="player-field Hus-field player-1"></div>
+  <div class="player-field Tårn-field player-1"></div>
+  <div class="player-field Sjanse-field player-1"></div>
+  <div class="player-field MaxiYatzy-field player-1"></div>
+  <div class="player-field TotalSum-field player-1" style="margin-top: 6px;"></div>
+         -->
+      </div> 
+      <div class="right-wrapper">
+        <div class="status-wrapper">
+        <span class="status">Aktiv spiller<span class="status aktiv-spiller"></span></span>
+        <span class="status">Antall kast<span class="status antall-kast"></span></span>
+      </div>
+        <div class="dice-wrapper"> 
+          <img class="dice dice-1" src="1-transparant.png"></img>
+          <img class="dice dice-2" src="2-transparant.png"></img>
+          <img class="dice dice-3" src="3-transparant.png"></img>
+          <img class="dice dice-4" src="4-transparant.png"></img>
+          <img class="dice dice-5" src="5-transparant.png"></img>
+          <img class="dice dice-6" src="6-transparant.png"></img></div>
+        <div class="button-container">
+          <button class="main-buttons roll-dice" disabled> Kast terninger</button>
+          <button class="main-buttons show-rules">Vis regler/hjelp</button>
+          <button class="main-buttons new-game-dialog-button">Start nytt spill</button>
+        </div>
+      </div>
+    </div>
+    <dialog type="modal" class="modal rules-modal">
+      <div class="modal-wrapper">
+        <h2>Regler</h2>
+        Maxi Yatxy er en variant av Yatzy som spilles med 6 terninger i stedet
+        for 5. Man tar tur med å kaste terning, og kan gjøre omkast inntil
+        totalt 3 kast (potensielt flere om man spiller med sjetonger). Om man
+        oppfyller kravene til en eller flere av feltene scorer man poeng etter
+        ulike regler, om man ikke kan score poeng så er man nødt til å stryke et
+        (valgfritt) felt.
+        <br /><br />
+        For å klare bonus (100 poeng) må man klare i snitt 4 av de ulike
+        tallfeltene oppe. Man kan selvsagt kompensere for lave antall med høyt
+        antall i andre felt. For å oppnå bonus kreves 84 poeng eller mer. Maxi
+        Yatzy (6 like terninger) gir også 100 poeng. Det finnes mange ulike
+        varianter og husregler i ulike Yatzy-varianter. Noen presiseringer av
+        reglene for denne utgave: <br /><br />
+        - Det er ikke lov å fordele like sifre over ulike par og felt i
+        hus/tårn/hytte (man kan for eksempel ikke bruke fire femmere som to par,
+        det må være par av to ulike tall). <br />
+        - Om man spiller med sjetonger kan man velge å spare alle tre kastene
+        ved å stryke noe uten å kaste i det hele tatt. Det er usikkert om det er
+        i tråd med originale regler med sjetonger, men jeg synes det gir en
+        ekstra dimensjon av strategi.
+
+        <h2>Målet med spillet</h2>
+        Vinneren er den spilleren som har flest poeng når spillet er over
+        (spillet er over når alle feltene er fylt og/eller strøket)
+
+        <h2>Valgmuligheter</h2>
+        Du kan velge antall spillere, velge navn på spillerne og velge om dere
+        vil spille med eller uten sjetonger. Tvungen Yatzy er ikke med her fordi
+        jeg synes det er kjedelig.
+
+        <h2>Om denne nettsiden</h2>
+        Dette spillet er kodet av meg i Javascript, CSS og HTML som øving med et
+        langsiktig mål om å bli fulltid frontend-utvikler.
+        <br /><br />
+        <button class="main-buttons modal-button rules-button">
+          Lukk dette vinduet
+        </button>
+      </div>
+    </dialog>
+    <dialog type="modal" class="modal new-game-modal">
+      
+      <div class="modal-wrapper">
+        <center>
+        <h2>Nytt spill</h2>
+        <field>
+          <label for="sjetonger">Spill med sjetonger?</label>
+          <input
+            type="checkbox"
+            name="sjetonger "
+            id="sjetonger"
+            class="toggle-chips input"
+            checked
+          />
+        </field></br>
+        <field>
+          <label for="velg-antall">Velg antall spillere</label>
+          <select id="velg-antall" class="player-count-input input">
+            <option>1 spiller</option>
+            <option selected>2 spillere</option>
+            <option>3 spillere</option>
+            <option>4 spillere</option>
+            <option>5 spillere</option>
+            <option>6 spillere</option>
+          </select>
+        </field>
+        <div class="player-input-field">
+          <field>
+            <label for="navn1">Spillernavn</label>
+            <input
+              type="text"
+              id="navn1"
+              class="input-name input name-player1"
+              required
+              minlength="2"
+              maxlength="10"
+              placeholder="Maks 10 bokstaver"
+            /> </field><br>
+          <field>
+            <label for="navn2">Spillernavn</label>
+            <input
+              type="text"
+              id="navn2"
+              class="input-name input name-player2"
+              required
+              minlength="2"
+              maxlength="10"
+              placeholder="Maks 10 bokstaver"
+            /> </field></div></center>
+        <button class="main-buttons modal-button new-game-button">
+          Start spillet
+        </button>
+      </div>
+      </div>
+    </dialog>
+    <dialog id="victory-modal" type="modal" class="modal victory-screen">
+      <div id="victory-wrapper" class="modal-wrapper"></div>
+      <button class="main-buttons modal-button close-modal">Lukk dette vinduet</button>
+    </dialog>
+    <div class="background-blur"></div>
+  </body>
+</html>
