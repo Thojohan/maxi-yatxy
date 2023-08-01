@@ -2,6 +2,7 @@
 
 const mainButtons = document.querySelectorAll('.main-buttons');
 const dice = document.querySelectorAll('.dice');
+diceWrapper = document.querySelector('.dice-wrapper');
 const rulesModal = document.querySelector('.rules-modal');
 const newGameModal = document.querySelector('.new-game-modal');
 const victoryModal = document.querySelector('.victory-screen');
@@ -226,7 +227,7 @@ class Gamestate {
   activePlayer = 0;
   gameOngoing = false;
   currentRolls = [];
-  diceWrapper = document.querySelector('.dice-wrapper');
+
 
   constructor(playerArray, chips, playerCount) {
     this.playerArray = playerArray;
@@ -287,7 +288,7 @@ class Gamestate {
 
   rollDice() {
     if (this.playerArray[this.activePlayer - 1].diceRolls === 0) return;
-    this.diceWrapper.style.animation = 'dice-opacity 0.7s forwards';
+    diceWrapper.style.animation = 'dice-opacity 0.7s forwards';
     this.playerArray[this.activePlayer - 1].diceRolls--;
 
     const cycleDice = () => {
@@ -353,8 +354,8 @@ class Gamestate {
     });
 
     setTimeout(() => {
-      this.diceWrapper.style = '';
-      this.diceWrapper.style.animation = 'hide-dice 0.5s forwards';
+      diceWrapper.style = '';
+      diceWrapper.style.animation = 'hide-dice 0.5s forwards';
       dice.forEach(die => die.classList.remove('held'));
       const instance = instanceArray.find(el => el.fieldName === match.id);
       if (!instance.calculateScore(this.currentRolls)) {
