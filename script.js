@@ -509,7 +509,7 @@ function newGame() {
   [...document.querySelectorAll('.player')].forEach(player => player.remove());
   createPlayers(nameArray, document.querySelector('.toggle-chips').checked);
   leftWrapper.style.pointerEvents = 'auto';
-  diceWrapper.style.animation = 'hide-dice 0.5s forwards';
+  diceWrapper.style.animation = 'hide-dice forwards';
   instanceArray.forEach(entry => {
     document.getElementById(`${entry.fieldName}`).style.backgroundColor = '';
   });
