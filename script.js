@@ -68,7 +68,6 @@ class BonusField extends YatzyField {
     this.bonusSum = bonusSum;
   }
   calculateScore(sumField) {
-    console.log(sumField, this.requiredSum, this.bonusSum);
     if (sumField >= this.requiredSum) return this.bonusSum;
     else return 0;
   }
@@ -354,7 +353,6 @@ class Gamestate {
     });
 
     setTimeout(() => {
-      console.log(this.dicewrapper);
       this.diceWrapper.style = '';
       this.diceWrapper.style.animation = 'hide-dice 0.5s forwards';
       dice.forEach(die => die.classList.remove('held'));
@@ -469,8 +467,6 @@ function displayModal(e) {
 }
 
 function hideModal(e) {
-  document.removeEventListener('click', hideModalCallback);
-  document.removeEventListener('keydown', hideModalCallback);
   victoryModal.close();
   newGameModal.close();
   rulesModal.close();
