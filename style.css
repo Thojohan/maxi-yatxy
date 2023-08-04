@@ -76,7 +76,7 @@ span {
 
 .left-wrapper {
   display: flex;
-  min-height: 640px;
+  min-height: 630px;
   height: 87vh;
   margin-top: 3%;
   width: fit-content;
@@ -104,7 +104,6 @@ span {
 .player {
   background-image: url(player-border.jpg);
   background-size: cover;
-  min-height: 700px;
   height: 1flex;
   aspect-ratio: 1/18;
   min-width: 42px;
