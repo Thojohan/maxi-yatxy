@@ -110,7 +110,6 @@ span {
   aspect-ratio: 1/18;
   min-width: 42px;
   margin-left: 1px;
-  padding-bottom: 0.55vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
