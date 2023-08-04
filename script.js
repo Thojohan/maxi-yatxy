@@ -18,7 +18,7 @@ let game;
 const instanceArray = [];
 
 // Prevent screen rotation
-if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+if (/iPhone|Android/i.test(navigator.userAgent)) {
   root.classList.add('is-mobile-device');
 }
 
