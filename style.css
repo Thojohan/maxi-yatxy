@@ -76,10 +76,9 @@ span {
 
 .left-wrapper {
   display: flex;
-  /* height: 630px; */
   min-height: 650px;
   height: 87vh;
-  margin-top: 40px;
+  margin-top: 3%;
   width: fit-content;
   margin-left: 40px;
   margin-right: auto;
