@@ -1,5 +1,7 @@
 'use strict';
 
+screen.orientation.lock('portrait');
+
 const mainButtons = document.querySelectorAll('.main-buttons');
 const dice = document.querySelectorAll('.dice');
 const diceWrapper = document.querySelector('.dice-wrapper');
