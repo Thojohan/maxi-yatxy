@@ -76,7 +76,7 @@ span {
 
 .left-wrapper {
   display: flex;
-  min-height: 650px;
+  min-height: 640px;
   height: 87vh;
   margin-top: 3%;
   width: fit-content;
@@ -155,13 +155,6 @@ span {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-  /*
-  min-height: 83px;
-  max-width: 440px;
-  min-width: 83px;
-  max-height: 440px;
-  */
   min-height: 83px;
   max-height: 50vh;
   min-width: 83px;
@@ -202,8 +195,6 @@ to {
 }
 
 .dice {
-  /*width: 60px;
-  height: 60px;*/
   width: 7.5vh;
   aspect-ratio: 1/1;
   padding: 7px;
