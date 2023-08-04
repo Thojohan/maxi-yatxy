@@ -12,9 +12,15 @@ const backgroundBlur = document.querySelector('.background-blur');
 const yatzyButtons = document.querySelectorAll('.clickable');
 const leftWrapper = document.querySelector('.left-wrapper');
 const rollDiceButton = document.querySelector('.roll-dice');
+const root = document.documentElement;
 
 let game;
 const instanceArray = [];
+
+// Prevent screen rotation
+if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+  root.classList.add('is-mobile-device');
+}
 
 // Class constructors
 
