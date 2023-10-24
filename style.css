@@ -106,7 +106,7 @@ span {
   background-size: contain;
   height: 1flex;
   aspect-ratio: 1/18;
-  min-width: 42px;
+  width: 38px;
   margin-left: 1px;
   display: flex;
   flex-direction: column;
