@@ -75,38 +75,48 @@ span {
 }
 
 .left-wrapper {
-  display: flex;
-  min-height: 630px;
+ 
+  /* height: 630px; */
+  height: fit-content;
   height: 87vh;
-  margin-top: 1.75%;
+  margin-top: 35px;
   width: fit-content;
   margin-left: 40px;
   margin-right: auto;
-  box-sizing: border-box;
-  box-shadow: 3px 3px 3px rgb(35, 28, 86);
   z-index: 3;
   pointer-events: none;
   
 }
 
+.yatzyboard-wrapper { 
+  height: fit-content;
+  display: flex; 
+  box-sizing: border-box;
+  box-shadow: 3px 3px 3px rgb(35, 28, 86);
+
+}
+
 .yatzy-buttons {
   background-image: url(mainbar.jpg);
-  background-size: contain;
+ min-height: 550px;
+ max-height: 650px;
+ background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-bottom: 0.3vh;
   height: 1flex;
-  min-width: 97px;
-  aspect-ratio: 1/8
+  width: 95px;
+  aspect-ratio: 1/8;
+  padding-bottom: 1.5%;
+  box-sizing: border-box;
 }
 
 .player {
   background-image: url(player-border.jpg);
-  background-size: contain;
-  height: 1flex;
-  aspect-ratio: 1/18;
-  width: 38px;
+  background-size: cover;
+  min-height: 550px;
+  max-height: 650px;
+  aspect-ratio: 1/15;
   margin-left: 1px;
   display: flex;
   flex-direction: column;
