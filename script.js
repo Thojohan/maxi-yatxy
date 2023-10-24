@@ -11,6 +11,7 @@ const playerCount = document.querySelector('.player-count-input');
 const backgroundBlur = document.querySelector('.background-blur');
 const yatzyButtons = document.querySelectorAll('.clickable');
 const leftWrapper = document.querySelector('.left-wrapper');
+const yatzyboardWrapper= document.querySelector('.yatzyboard-wrapper')
 const rollDiceButton = document.querySelector('.roll-dice');
 const root = document.documentElement;
 
@@ -196,7 +197,7 @@ class Player {
     this.playerNumber = playerNumber;
   }
   insertHTML() {
-    leftWrapper.insertAdjacentHTML(
+    yatzyboardWrapper.insertAdjacentHTML(
       'beforeend',
       `
       <div class="player player-${this.playerNumber}"</div>
